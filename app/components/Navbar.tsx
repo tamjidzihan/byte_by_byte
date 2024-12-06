@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { Menu, X, ChevronDown, ChartBarStacked } from "lucide-react";
+import { Menu, X, ChevronDown, Logs } from "lucide-react";
 import ToggleColorMode from './ToggleColorMode';
 import Link from 'next/link';
 
@@ -8,15 +8,13 @@ const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 dark:text-white border-b dark:border-gray-700 transition-colors">
+        <header className="sticky top-0 z-50 bg-white dark:bg-gray-900 dark:text-white border-t-4 border-indigo-600 dark:border-indigo-900 shadow transition-colors">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-28">
-                <div className="flex justify-between items-center h-16">
-
-
+                <div className="flex justify-between items-center h-16 ">
                     <div className="flex items-center space-x-4">
                         <div className="relative group hidden md:block">
                             <button className="flex items-center space-x-1 px-4 py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                <span> <ChartBarStacked className=' inline-block' size={20} /> Categories</span>
+                                <span> <Logs className='inline-block' size={20} /> Categories</span>
                                 <ChevronDown size={16} />
                             </button>
 
