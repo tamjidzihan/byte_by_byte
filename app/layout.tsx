@@ -27,6 +27,23 @@ export default function RootLayout({
   return (
     <html lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
+      <head>
+        {/* Inline script to set the initial theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('theme');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else {
+                  document.documentElement.classList.remove('dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className=" min-h-screen flex flex-col dark:bg-gray-800  bg-white">
 
         <Navbar />

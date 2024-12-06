@@ -1,7 +1,8 @@
 'use client'
 import React, { useState } from 'react'
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, ChartBarStacked } from "lucide-react";
 import ToggleColorMode from './ToggleColorMode';
+import Link from 'next/link';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,12 +16,13 @@ const Navbar = () => {
                     <div className="flex items-center space-x-4">
                         <div className="relative group hidden md:block">
                             <button className="flex items-center space-x-1 px-4 py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                <span>Categories</span>
+                                <span> <ChartBarStacked className=' inline-block' size={20} /> Categories</span>
                                 <ChevronDown size={16} />
                             </button>
 
-                            <div className="absolute hidden group-hover:block w-48 bg-white dark:bg-gray-800 border dark:border-gray-700 rounded-md shadow-lg py-1 mt-1">
-                                <a className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                            <div className="absolute hidden group-hover:block w-48 rounded-md shadow-lg py-1 mt-1">
+                                <a className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors
+                                ">
                                     Technology
                                 </a>
                                 <a className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
@@ -36,7 +38,11 @@ const Navbar = () => {
                         </div>
                         <ToggleColorMode />
                     </div>
-                    <h1 className="text-2xl font-bold">The Modern Blog</h1>
+                    <Link href={'/'} className="text-2xl font-bold">
+                        Byte
+                        <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  inline-block text-transparent bg-clip-text'>-By-</span>
+                        Byte
+                    </Link>
                     <button
                         className="md:hidden"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -46,28 +52,28 @@ const Navbar = () => {
                     </button>
 
                     <nav
-                        className={`${isMenuOpen ? "block" : "hidden"} absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 border-b dark:border-gray-700 md:block md:static md:border-0`}
+                        className={`${isMenuOpen ? "block" : "hidden"} absolute top-16 left-0 right-0 md:block md:static md:border-0`}
                     >
                         <ul className="flex flex-col md:flex-row md:space-x-8 p-4 md:p-0">
                             <li>
-                                <a className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                <Link href={'/'} className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                                     Home
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                <Link href={'/'} className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                                     Articles
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                <Link href={'/'} className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                                     About
-                                </a>
+                                </Link>
                             </li>
                             <li>
-                                <a className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                <Link href={'/'} className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                                     Contact
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
