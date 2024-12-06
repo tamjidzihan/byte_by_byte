@@ -50,7 +50,7 @@ const Navbar = () => {
                     </button>
 
                     <nav
-                        className={`${isMenuOpen ? "block" : "hidden"} absolute top-16 left-0 right-0 md:block md:static md:border-0`}
+                        className={`${isMenuOpen ? "block" : "hidden"} absolute top-16 left-0 right-0 md:block md:static md:border-0 `}
                     >
                         <ul className="flex flex-col md:flex-row md:space-x-8 p-4 md:p-0">
                             <li>
