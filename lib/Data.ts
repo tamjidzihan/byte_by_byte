@@ -6,7 +6,7 @@ import readingTime from "reading-time";
 
 const dir = path.join(process.cwd(), "_content")
 
-export const getAllBlogsPost = () => {
+export const getAllBlogPosts = () => {
     const allFiles = fs.readdirSync(dir);
     const allBlogs = allFiles.map((file) => {
         const filePath = path.join(dir, file);

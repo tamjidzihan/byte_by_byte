@@ -29,7 +29,6 @@ export default function RootLayout({
     <html lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
       <head>
-        {/* Inline script to set the initial theme */}
         <script
           dangerouslySetInnerHTML={{
             __html: `

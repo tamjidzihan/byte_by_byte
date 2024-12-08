@@ -1,16 +1,17 @@
-import { getAllBlogsPost } from "@/lib/Data";
+import { getAllBlogPosts } from "@/lib/Data";
 import FeaturedPost from "./components/FeaturedBlog";
-import BlogHeader from "./components/BlogHeader";
+import BlogCard from "./components/BlogCard";
+import Header from "./components/Header";
 
 
 export default function Home() {
-  const allBlogs = getAllBlogsPost();
+  const allBlogs = getAllBlogPosts();
   // const allTopics = getAllTopics();
   return (
     <>
+      <Header />
       <FeaturedPost />
-
-      <section className="py-16">
+      <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-8 dark:text-white">
             Recent Articles
@@ -21,7 +22,7 @@ export default function Home() {
               allBlogs.map(
                 (blog) =>
                   blog.data.isPublished && (
-                    <BlogHeader
+                    <BlogCard
                       key={blog.data.Id}
                       data={blog.data}
                       content={blog.content}
