@@ -2,7 +2,7 @@ import BlogBody from '@/app/components/BlogBody'
 import BlogSideBar from '@/app/components/BlogSideBar'
 import { getAllBlogPosts } from '@/lib/Data'
 import { getHeadings } from '@/lib/GetHeadings'
-import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+// import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import React from 'react'
 import remarkHeadingId from 'remark-custom-heading-id'
@@ -25,7 +25,7 @@ const BlogsPage = async ({ params }: Props) => {
         );
     }
     const { data, content } = page
-    const mdxSource: MDXRemoteSerializeResult = await serialize(content, {
+    const mdxSource = await serialize(content, {
         scope: data,
         mdxOptions: { remarkPlugins: [remarkHeadingId] },
     });

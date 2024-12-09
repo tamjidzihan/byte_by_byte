@@ -5,7 +5,7 @@ import featureImage from '../../public/photo-f.jpg'
 
 const FeaturedPost = () => {
     return (
-        <section className="relative py-10 bg-gray-50 dark:bg-gray-800">
+        <section className="relative py-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
                     <Image

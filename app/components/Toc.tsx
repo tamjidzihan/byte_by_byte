@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 
 interface Props {
-    headings: any[];
+    headings: string[] | null;
 }
 
 function Toc({ headings }: Props) {
@@ -13,7 +13,7 @@ function Toc({ headings }: Props) {
     return (
         <nav className=" top-32 overflow-auto toc-inner mb-40">
             <ul>
-                {headings.map((heading: any) => (
+                {headings?.map((heading: any) => (
                     <li
                         key={heading.uid}
                         className="mt-4 text-lg text-gray-700"

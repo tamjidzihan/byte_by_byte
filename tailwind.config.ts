@@ -72,7 +72,6 @@ const config: Config = {
         },
       }),
 
-
     },
   },
   variants: {
