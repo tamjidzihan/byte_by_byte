@@ -39,6 +39,7 @@ const BlogPage = async ({ params }: Props) => {
                     data={data}
                     content={mdxSource}
                     headings={headings}
+
                 />
             </div>
         </div>

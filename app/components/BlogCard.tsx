@@ -8,7 +8,7 @@ function BlogCard({ data, readTime }: any) {
     return (
         <>
             <article
-                className="h-full max-h-[30rem] bg-gray-50 dark:bg-gray-900 rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-shadow max-md:"
+                className="h-full max-h-[30rem] bg-gray-50 dark:bg-gray-900 rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-shadow max-md: cursor-pointer"
             >
                 <Image
                     className="w-full h-48 object-cover"

@@ -1,7 +1,7 @@
 import BlogBody from '@/app/components/BlogBody'
 import BlogSideBar from '@/app/components/BlogSideBar'
 import { getAllBlogPosts } from '@/lib/Data'
-// import { getHeadings } from '@/lib/GetHeadings'
+import { getHeadings } from '@/lib/GetHeadings'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import React from 'react'
@@ -29,14 +29,14 @@ const BlogsPage = async ({ params }: Props) => {
         scope: data,
         mdxOptions: { remarkPlugins: [remarkHeadingId] },
     });
-    // const headings = await getHeadings(content);
+    const headings = await getHeadings(content);
 
 
     return (
         <div className="max-w-[1440px] mx-auto px-4 py-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-40">
                 <BlogBody data={data} content={mdxSource} />
-                <BlogSideBar />
+                <BlogSideBar headings={headings} />
 
             </div>
         </div>
