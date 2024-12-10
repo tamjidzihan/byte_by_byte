@@ -1,41 +1,52 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Image from 'next/image'
 import React from 'react'
 import { ArrowRight } from "lucide-react";
-import featureImage from '../../public/photo-f.jpg'
+import Link from 'next/link';
+import { getFormatDate } from '@/lib/GetFormatDate';
 
-const FeaturedPost = () => {
+interface FeaturedPostProps {
+    data: any
+    readTime: any
+}
+
+const FeaturedPost = ({ data, readTime }: FeaturedPostProps) => {
+    const formattedDate = getFormatDate(data.createdAt)
+
     return (
         <section className="relative py-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="relative bg-white dark:bg-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <div className="relative bg-white dark:bg-gray-950  hover:bg-gray-100 hover:dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden cursor-pointer">
                     <Image
-                        src={featureImage}
-                        alt="Featured post header image showing a laptop and coffee"
+                        src={data.HeaderImage}
+                        alt={`Header image for ${data.title}`}
                         className="w-full h-72 object-cover"
                         width={500}
                         height={500}
                     />
                     <div className="p-8">
-                        <span className="text-sm">
-                            <span className="text-blue-600 dark:text-blue-400">
-                                Technology
-                            </span>
+                        <span className="text-sm flex justify-between">
+                            <Link href={'/'} >
+                                <span className="inline-block py-1 px-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-gray-300  text-sm font-medium tracking-widest">
+                                    {data.tags[0]}
+                                </span>
+                            </Link >
                             <span className="text-gray-500 dark:text-gray-400">
                                 {" "}
-                                • Featured • June 1, 2023
+                                <span className=' hover:text-blue-800 dark:hover:text-blue-300 '>Featured </span>• {formattedDate} •  {readTime}
                             </span>
                         </span>
-                        <h2 className="mt-2 text-3xl font-bold dark:text-white">
-                            The Future of Web Development: What&apos;s Next?
-                        </h2>
+                        <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} >
+                            <h2 className="mt-2 text-3xl font-bold dark:text-white hover:text-blue-800 dark:hover:text-blue-300">
+                                {data.Title}
+                            </h2>
+                        </Link>
                         <p className="mt-4 text-gray-600 dark:text-gray-300">
-                            Explore the latest trends and technologies shaping the future
-                            of web development. From WebAssembly to Edge Computing,
-                            discover what&apos;s driving innovation in our industry.
+                            {data.Abstract}..
                         </p>
-                        <a className="inline-flex items-center mt-6 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
+                        <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} className="inline-flex items-center mt-6 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors">
                             Read more <ArrowRight className="ml-2" size={16} />
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

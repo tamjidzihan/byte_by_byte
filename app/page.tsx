@@ -9,7 +9,17 @@ export default function Home() {
   return (
     <>
       <Header />
-      <FeaturedPost />
+      {allBlogs &&
+        allBlogs.map(
+          (blog) =>
+            blog.data.isFeatured && (
+              <FeaturedPost
+                key={blog.data.Id}
+                data={blog.data}
+                readTime={blog.readTime.text}
+              />
+            )
+        )}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-8 dark:text-white">
@@ -24,7 +34,6 @@ export default function Home() {
                     <BlogCard
                       key={blog.data.Id}
                       data={blog.data}
-                      content={blog.content}
                       readTime={blog.readTime.text}
                     />
                   )

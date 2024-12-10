@@ -2,13 +2,16 @@
 import Link from "next/link";
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
+import { getFormatDate } from "@/lib/GetFormatDate";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function BlogCard({ data, readTime }: any) {
+    const formattedDate = getFormatDate(data.createdAt)
+
     return (
         <>
             <article
-                className="h-full max-h-[30rem] bg-gray-50 dark:bg-gray-900 rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-shadow max-md: cursor-pointer"
+                className="h-full max-h-[30rem] bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 hover:dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-shadow max-md: cursor-pointer"
             >
                 <Image
                     className="w-full h-48 object-cover"
@@ -21,11 +24,11 @@ function BlogCard({ data, readTime }: any) {
                     <div className=" flex justify-between">
                         <Link href={'/'} >
                             <span className="inline-block py-1 px-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-gray-300  text-sm font-medium tracking-widest">
-                                {data.Tags.split(" ")[0]}
+                                {data.tags[0]}
                             </span>
                         </Link >
                         <span className="text-sm text-gray-500 dark:text-gray-400">
-                            {readTime}  • June 1, 2023
+                            {readTime}  •   {formattedDate}
                         </span>
                     </div>
                     <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} >

@@ -1,4 +1,5 @@
 'use client'
+import { getFormatDate } from "@/lib/GetFormatDate";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
@@ -10,6 +11,7 @@ interface BlogBodyProps {
 }
 
 const BlogBody = ({ data, content }: BlogBodyProps) => {
+    const formattedDate = getFormatDate(data.createdAt)
     return (
         <>
             <div className="lg:col-span-2">
@@ -21,10 +23,10 @@ const BlogBody = ({ data, content }: BlogBodyProps) => {
                         height={500}
                         width={500}
                     />
-                    <h1 className="text-5xl font-bold mb-4 dark:prose-dark">
+                    <h1 className="text-5xl font-bold mb-3 dark:prose-dark">
                         {data.Title}
                     </h1>
-                    <div className="flex items-center mb-6">
+                    <div className="flex items-center">
                         <Image
                             src='/BL-1002/next-react.jpg'
                             alt="Author"
@@ -32,11 +34,12 @@ const BlogBody = ({ data, content }: BlogBodyProps) => {
                             height={500}
                             width={500}
                         />
-                        <div>
-                            <p className="font-semibold dark:prose-dark">John Doe</p>
-                            <p className="dark:prose-dark">Posted on July 15, 2023</p>
+                        <div >
+                            <p className="font-semibold dark:text-gray-400 mb-0">{data.Author}</p>
+                            <p className="dark:prose-dark dark:text-gray-400 mt-0">Posted on {formattedDate}</p>
                         </div>
                     </div>
+                    <hr className="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
                     <div className="prose max-w-xs sm:max-w-sm md:max-w-prose lg:prose-xl  dark:prose-dark">
                         <MDXRemote {...content} />
                     </div>

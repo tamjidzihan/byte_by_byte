@@ -18,8 +18,6 @@ const BlogSideBar = ({ headings }: BlogSideBarProps) => {
                 </div>
                 <h3 className="text-2xl font-bold mb-6 dark:prose-dark">Latest Posts</h3>
                 <div className="space-y-6">
-
-
                     <div className="border rounded-lg overflow-hidden dark:prose-dark">
                         <Image
                             src='/BL-1002/next-react.jpg'
@@ -35,8 +33,6 @@ const BlogSideBar = ({ headings }: BlogSideBarProps) => {
                             <p className="text-gray-600 text-sm dark:prose-dark">July 10, 2023  Technology</p>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
