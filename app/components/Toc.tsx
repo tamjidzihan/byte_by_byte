@@ -11,7 +11,7 @@ function Toc({ headings }: Props) {
     const [active, setActive] = useState("");
 
     return (
-        <nav className=" top-32 overflow-auto toc-inner mb-40">
+        <nav className=" top-32 overflow-auto toc-inner mb-20">
             <ul>
                 {headings?.map((heading: any) => (
                     <li
