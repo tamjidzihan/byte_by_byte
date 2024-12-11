@@ -3,7 +3,7 @@ import Image from 'next/image'
 import React from 'react'
 import { ArrowRight } from "lucide-react";
 import Link from 'next/link';
-import { getFormatDate } from '@/lib/GetFormatDate';
+import { getFormatDate } from '../../lib/GetFormatDate';
 
 interface FeaturedPostProps {
     data: any

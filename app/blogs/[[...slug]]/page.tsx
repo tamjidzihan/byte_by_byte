@@ -1,10 +1,10 @@
-import BlogBody from '@/app/components/BlogBody'
-import BlogSideBar from '@/app/components/BlogSideBar'
-import { getAllBlogPosts } from '@/lib/Data'
-import { getHeadings } from '@/lib/GetHeadings'
 import { serialize } from 'next-mdx-remote/serialize'
 import React from 'react'
 import remarkHeadingId from 'remark-custom-heading-id'
+import { getAllBlogPosts } from '../../../lib/Data'
+import { getHeadings } from '../../../lib/GetHeadings'
+import BlogBody from '../../components/BlogBody'
+import BlogSideBar from '../../components/BlogSideBar'
 
 interface Props {
     params: Promise<{ slug: string }>

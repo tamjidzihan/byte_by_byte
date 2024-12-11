@@ -1,9 +1,9 @@
 'use client'
-import { getFormatDate } from "@/lib/GetFormatDate";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
 import React from 'react'
+import { getFormatDate } from "../../lib/GetFormatDate";
 
 interface BlogBodyProps {
     data: any;

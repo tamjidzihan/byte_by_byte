@@ -3,7 +3,7 @@
 import React from 'react'
 import Toc from './Toc'
 import FeaturedBlogCard from './FeaturedBlogCard';
-import { getAllBlogPosts } from '@/lib/Data';
+import { getAllBlogPosts } from '../../lib/Data';
 
 interface BlogSideBarProps {
     headings: any;

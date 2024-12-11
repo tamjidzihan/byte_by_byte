@@ -38,7 +38,7 @@ const Navbar = () => {
                     </div>
                     <Link href={'/'} className="text-2xl font-bold">
                         Byte
-                        <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  inline-block text-transparent bg-clip-text'>-By-</span>
+                        <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  inline-block text-transparent bg-clip-text'>-by-</span>
                         Byte
                     </Link>
                     <button

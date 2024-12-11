@@ -11,7 +11,7 @@ const Footer = () => {
 
                         <Link href={'/'} className="text-2xl block font-bold dark:text-white text-gray-900  mb-4">
                             Byte
-                            <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  inline-block text-transparent bg-clip-text'>-By-</span>
+                            <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  inline-block text-transparent bg-clip-text'>-by-</span>
                             Byte
                         </Link>
 
@@ -66,7 +66,7 @@ const Footer = () => {
                 <div className="mt-8 pt-8 border-t dark:border-gray-700 text-center text-gray-600 dark:text-gray-300">
                     <p>&copy; 2024  <Link href={'/'} className="font-bold mb-4 inline-block hover:bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:text-transparent hover:bg-clip-text">
                         Byte
-                        <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text'>-By-</span>
+                        <span className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 inline-block text-transparent bg-clip-text'>-by-</span>
                         Byte
                     </Link>. All rights reserved.</p>
                 </div>

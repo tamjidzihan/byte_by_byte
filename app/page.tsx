@@ -1,7 +1,7 @@
-import { getAllBlogPosts } from "@/lib/Data";
 import FeaturedPost from "./components/FeaturedBlog";
 import BlogCard from "./components/BlogCard";
 import Header from "./components/Header";
+import { getAllBlogPosts } from "../lib/Data";
 
 
 export default function Home() {

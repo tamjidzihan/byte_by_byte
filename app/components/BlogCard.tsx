@@ -1,10 +1,9 @@
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from "next/link";
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-import { getFormatDate } from "@/lib/GetFormatDate";
+import { getFormatDate } from "../../lib/GetFormatDate";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function BlogCard({ data, readTime }: any) {
     const formattedDate = getFormatDate(data.createdAt)
 

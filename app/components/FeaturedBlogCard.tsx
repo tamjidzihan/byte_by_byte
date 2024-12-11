@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import Image from 'next/image'
-import { getFormatDate } from '@/lib/GetFormatDate'
 import Link from 'next/link'
+import { getFormatDate } from '../../lib/GetFormatDate'
 
 interface FeaturedBlogCardProps {
     data: any
