@@ -28,7 +28,7 @@ const FeaturedPost = ({ data, readTime }: FeaturedPostProps) => {
                         <span className="text-sm flex justify-between">
                             <Link href={'/'} >
                                 <span className="inline-block py-1 px-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-gray-300  text-sm font-medium tracking-widest">
-                                    {data.tags[0]}
+                                    {data.Topic}
                                 </span>
                             </Link >
                             <span className="text-gray-500 dark:text-gray-400">
