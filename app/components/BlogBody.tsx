@@ -12,7 +12,6 @@ interface BlogBodyProps {
 
 const BlogBody = ({ data, content }: BlogBodyProps) => {
     const formattedDate = getFormatDate(data.createdAt)
-    console.log(data.tags)
     return (
         <>
             <div className="lg:col-span-2">

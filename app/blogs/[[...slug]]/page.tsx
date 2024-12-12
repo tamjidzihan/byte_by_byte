@@ -5,6 +5,8 @@ import { getAllBlogPosts } from '../../../lib/Data'
 import { getHeadings } from '../../../lib/GetHeadings'
 import BlogBody from '../../components/BlogBody'
 import BlogSideBar from '../../components/BlogSideBar'
+import NotFoundPage from '../../components/NotFound'
+
 
 interface Props {
     params: Promise<{ slug: string }>
@@ -18,9 +20,7 @@ const BlogsPage = async ({ params }: Props) => {
     )
     if (!page) {
         return (
-            <div className="max-w-[1440px] mx-auto px-4 py-8">
-                <p>Blog post not found.</p>
-            </div>
+            <NotFoundPage />
         );
     }
     const { data, content } = page
@@ -35,7 +35,6 @@ const BlogsPage = async ({ params }: Props) => {
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-40">
                 <BlogBody data={data} content={mdxSource} />
                 <BlogSideBar headings={headings} />
-
             </div>
         </div>
     )

@@ -14,7 +14,7 @@ const Navbar = () => {
                     <div className="flex items-center space-x-4">
                         <div className="relative group hidden md:block">
                             <button className="flex items-center space-x-1 px-4 py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                <span> <Logs className='inline-block' size={20} /> Categories</span>
+                                <span> <Logs className='inline-block' size={20} /> Topics</span>
                                 <ChevronDown size={16} />
                             </button>
 
@@ -59,7 +59,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href={'/'} className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                <Link href={'/articles'} className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                                     Articles
                                 </Link>
                             </li>

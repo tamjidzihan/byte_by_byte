@@ -3,7 +3,6 @@ import React from 'react'
 
 const Footer = () => {
     return (
-
         <footer className="bg-gray-50 dark:bg-gray-900 border-t-2 border-indigo-600 dark:border-indigo-900 shadow transition-colors">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -26,12 +25,12 @@ const Footer = () => {
                         <ul className="space-y-2">
                             <li>
                                 <Link href={'/'} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                    About Us
+                                    Home
                                 </Link>
                             </li>
                             <li>
-                                <Link href={'/'} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                    Contact
+                                <Link href={'/about'} className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                    About me
                                 </Link>
                             </li>
                             <li>
@@ -48,7 +47,7 @@ const Footer = () => {
                         <p className="text-gray-600 dark:text-gray-300 mb-4">
                             Subscribe to our newsletter for the latest updates.
                         </p>
-                        <form className="flex">
+                        <form className=" flex-wrap">
                             <input
                                 type="email"
                                 placeholder="Enter your email"

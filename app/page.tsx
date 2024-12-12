@@ -1,47 +1,34 @@
 import FeaturedPost from "./components/FeaturedBlog";
-import BlogCard from "./components/BlogCard";
 import Header from "./components/Header";
 import { getAllBlogPosts } from "../lib/Data";
-
+import { getLatestFeaturedBlog } from "../lib/GetLatestFeaturedBlog";
+import BlogList from "./components/BlogList";
 
 export default function Home() {
   const allBlogs = getAllBlogPosts();
+  const latestFeatured = getLatestFeaturedBlog(allBlogs);
   return (
     <>
       <Header />
-      {allBlogs &&
-        allBlogs.map(
-          (blog) =>
-            blog.data.isFeatured && (
-              <FeaturedPost
-                key={blog.data.Id}
-                data={blog.data}
-                readTime={blog.readTime.text}
-              />
-            )
-        )}
+      {latestFeatured && (
+        <FeaturedPost
+          key={latestFeatured.data.Id}
+          data={latestFeatured.data}
+          readTime={latestFeatured.readTime.text}
+        />
+      )}
       <section className="py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-8 dark:text-white">
             Recent Articles
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-            {allBlogs &&
-              allBlogs.map(
-                (blog) =>
-                  blog.data.isPublished && (
-                    <BlogCard
-                      key={blog.data.Id}
-                      data={blog.data}
-                      readTime={blog.readTime.text}
-                    />
-                  )
-              )}
-          </div>
+          <BlogList
+            allBlogs={allBlogs}
+            initialCount={6}
+            incrementCount={3}
+          />
         </div>
       </section>
-
     </>
   );
 }
