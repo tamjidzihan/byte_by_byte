@@ -33,7 +33,7 @@ const BlogsPage = async ({ params }: Props) => {
     return (
         <div className="max-w-[1440px] mx-auto px-4 py-8">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-40">
-                <BlogBody data={data} content={mdxSource} />
+                <BlogBody data={data} mdxSource={mdxSource} />
                 <BlogSideBar headings={headings} />
             </div>
         </div>

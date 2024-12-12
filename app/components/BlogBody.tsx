@@ -7,10 +7,10 @@ import { getFormatDate } from "../../lib/GetFormatDate";
 
 interface BlogBodyProps {
     data: any;
-    content: any;
+    mdxSource: any;
 }
 
-const BlogBody = ({ data, content }: BlogBodyProps) => {
+const BlogBody = ({ data, mdxSource }: BlogBodyProps) => {
     const formattedDate = getFormatDate(data.createdAt)
     return (
         <>
@@ -49,7 +49,7 @@ const BlogBody = ({ data, content }: BlogBodyProps) => {
                     </div>
                     <hr className="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
                     <div className="prose max-w-xs sm:max-w-sm md:max-w-prose lg:prose-xl  dark:prose-dark">
-                        <MDXRemote {...content} />
+                        <MDXRemote {...mdxSource} />
                     </div>
                 </article>
             </div>
