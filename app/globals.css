@@ -3,11 +3,17 @@
 @tailwind utilities;
 
 @layer utilities {
-  @variants dark {
-    .bg-dark {
-      background: #070c17db;
-      backdrop-filter: blur(3px);
-    }
+  .bg-dark {
+    background: #070c17db;
+    backdrop-filter: blur(3px);
+  }
+}
+
+/* Dark mode specific */
+@layer utilities {
+  .dark .bg-dark {
+    background: #070c17db;
+    backdrop-filter: blur(3px);
   }
 }
 

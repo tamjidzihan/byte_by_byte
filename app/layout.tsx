@@ -16,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Byte-By-Byte",
-  description: "Byte-By-Byte Explore,Learn,Apply ",
+  title: "Byte-by-Byte",
+  description: "Byte-by-Byte Explore,Learn,Apply ",
 };
 
 export default function RootLayout({
