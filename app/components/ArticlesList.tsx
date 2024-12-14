@@ -18,7 +18,7 @@ const ArticlesList = ({ allBlogs, initialCount, incrementCount }: ArticlesListPr
     const visibleBlogs = allBlogs.slice(0, visibleCount);
     return (
         <div>
-            <div className="grid gap-8">
+            <div className="grid gap-8 mb-32">
                 {visibleBlogs.map(
                     (blog) =>
                         blog.data.isPublished && (

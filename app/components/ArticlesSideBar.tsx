@@ -1,7 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Calendar1, Filter, Search, Tag } from 'lucide-react'
 import React from 'react'
 
-const ArticlesSideBar = () => {
+interface ArticlesSideBarProps {
+    allTopics: any[]
+}
+
+
+const ArticlesSideBar = ({ allTopics }: ArticlesSideBarProps) => {
     return (
         <aside className=" w-64 border-r bg-gray-50 dark:bg-gray-900 dark:border-gray-700 p-6 hidden md:block">
             <div className="sticky top-8">
@@ -18,16 +24,16 @@ const ArticlesSideBar = () => {
                 <div className="mb-8">
                     <h3 className="text-lg font-semibold mb-4 flex items-center text-gray-800 dark:text-gray-200">
                         <Filter className="h-5 w-5 mr-2 text-blue-500" />
-                        Categories
+                        Topics
                     </h3>
                     <div className="space-y-2">
-                        {['Technology (12)', 'Design (8)', 'Business (15)', 'Marketing (10)'].map((category) => (
-                            <label key={category} className="flex items-center cursor-pointer">
+                        {allTopics.map((topic, index) => (
+                            <label key={index} className="flex items-center cursor-pointer">
                                 <input
                                     type="checkbox"
                                     className="form-checkbox h-4 w-4 text-blue-600 dark:bg-gray-800 dark:border-gray-700"
                                 />
-                                <span className="ml-2 text-gray-700 dark:text-gray-300">{category}</span>
+                                <span className="ml-2 text-gray-700 dark:text-gray-300">{topic}</span>
                             </label>
                         ))}
                     </div>

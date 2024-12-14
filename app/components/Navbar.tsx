@@ -1,10 +1,15 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 import React, { useState } from 'react'
 import { Menu, X, ChevronDown, Logs } from "lucide-react";
 import ToggleColorMode from './ToggleColorMode';
 import Link from 'next/link';
 
-const Navbar = () => {
+interface NavbarProps {
+    allTopics: any[]
+}
+
+const Navbar = ({ allTopics }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
@@ -18,20 +23,13 @@ const Navbar = () => {
                                 <ChevronDown size={16} />
                             </button>
 
-                            <div className="absolute hidden group-hover:block w-48 rounded-md shadow-lg py-1 mt-1">
-                                <Link href={'/'} className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors
+                            <div className="absolute hidden group-hover:block w-48 rounded-md shadow-lg py-1 mt-1 bg-white dark:bg-gray-950">
+                                {allTopics.map((topic, index) =>
+                                    <Link key={index} href={'/'} className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors
                                 ">
-                                    Technology
-                                </Link>
-                                <Link href={'/'} className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                    Design
-                                </Link>
-                                <Link href={'/'} className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                    Development
-                                </Link>
-                                <Link href={'/'} className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                                    Tutorial
-                                </Link>
+                                        {topic}
+                                    </Link>
+                                )}
                             </div>
                         </div>
                         <ToggleColorMode />
@@ -52,7 +50,7 @@ const Navbar = () => {
                     <nav
                         className={`${isMenuOpen ? "block" : "hidden"} absolute top-16 left-0 right-0 md:block md:static md:border-0 `}
                     >
-                        <ul className="flex flex-col md:flex-row md:space-x-8 p-4 md:p-0">
+                        <ul className="flex flex-col md:flex-row md:space-x-8 p-4 md:p-0 bg-white dark:bg-gray-950">
                             <li>
                                 <Link href={'/'} className="block py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                                     Home

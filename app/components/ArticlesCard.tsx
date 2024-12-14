@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Bookmark } from 'lucide-react'
+import { ArrowRight, Bookmark } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
 import { getFormatDate } from '../../lib/GetFormatDate'
@@ -47,7 +47,9 @@ const ArticlesCard = ({ data, readTime }: any) => {
                 <p className="mt-3 text-gray-600 dark:text-gray-300 ">
                     {data.Abstract}..
                 </p>
-
+                <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} className="inline-flex items-center mt-4 text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors ">
+                    Read more <ArrowRight className="ml-2" size={16} />
+                </Link>
             </div>
         </article>
     )

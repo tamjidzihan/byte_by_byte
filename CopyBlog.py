@@ -8,11 +8,16 @@ Finally, it outputs a success message once the files are processed.
 import os
 import re
 import shutil
+from dotenv import load_dotenv
 
-posts_dir = r"D:\Tamzid\github\obsidian\post"
-attachments_dir = r"D:\Tamzid\github\obsidian\images"
-static_images_dir = r"D:\Tamzid\github\blog\main_blog\public"
-destination_dir = r"D:\Tamzid\github\blog\main_blog\_content"
+# Load environment variables from the .env file
+load_dotenv() 
+
+# Get paths from the .env file
+posts_dir = os.getenv("POST_DIR")
+attachments_dir =  os.getenv("ATTACHMENT_DIR")
+static_images_dir= os.getenv("STATIC_IMAGE_DIR")
+destination_dir= os.getenv("DESTINATION_DIR")
 
 # Step 1: Process each markdown file in the posts directory
 for filename in os.listdir(posts_dir):
