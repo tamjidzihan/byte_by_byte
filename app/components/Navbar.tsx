@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Menu, X, ChevronDown, Logs } from "lucide-react";
 import ToggleColorMode from './ToggleColorMode';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'
 
 interface NavbarProps {
     allTopics: any[]
@@ -11,6 +12,7 @@ interface NavbarProps {
 
 const Navbar = ({ allTopics }: NavbarProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const router = useRouter()
 
     return (
         <header className="sticky top-0 z-50 bg-opacity-90 dark:bg-opacity-90 bg-white dark:bg-gray-950 dark:text-white border-t-4 border-indigo-600 dark:border-indigo-900 shadow transition-colors">
@@ -25,10 +27,12 @@ const Navbar = ({ allTopics }: NavbarProps) => {
 
                             <div className="absolute hidden group-hover:block w-48 rounded-md shadow-lg py-1 mt-1 bg-white dark:bg-gray-950">
                                 {allTopics.map((topic, index) =>
-                                    <Link key={index} href={'/'} className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors
-                                ">
+                                    <div
+                                        key={index}
+                                        onClick={() => router.push('/articles')}
+                                        className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-pointer                              ">
                                         {topic}
-                                    </Link>
+                                    </div>
                                 )}
                             </div>
                         </div>
@@ -70,7 +74,7 @@ const Navbar = ({ allTopics }: NavbarProps) => {
                     </nav>
                 </div>
             </div>
-        </header>
+        </header >
     )
 }
 

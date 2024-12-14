@@ -14,7 +14,7 @@ const ArticlesPage = () => {
             />
             <main className="flex-1 p-6">
                 <div className="max-w-4xl mx-auto">
-                    <h1 className="text-3xl dark:text-white text-gray-700 font-bold mb-8">Latest Blog Posts</h1>
+
                     <ArticlesList
                         allBlogs={allBlogs}
                         initialCount={4}

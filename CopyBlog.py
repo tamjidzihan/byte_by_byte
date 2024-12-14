@@ -52,7 +52,8 @@ for filename in os.listdir(posts_dir):
             heading_text = match.group(2)
             # Remove unwanted characters from the heading ID
             heading_id = (
-                re.sub(r'[:;!.,?/*&^%$""\'\'\_\+\-]', "", heading_text)
+                # re.sub(r'[-():;!.,?/*&^%$""\'\'\_\+\-\.]', "", heading_text)
+                re.sub(r'[!-/:-@[-`{-~]', "", heading_text)
                 .replace(" ", "-")
                 .replace("#", "")
                 .strip()

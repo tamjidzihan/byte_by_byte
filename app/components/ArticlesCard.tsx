@@ -16,8 +16,15 @@ const ArticlesCard = ({ data, readTime }: any) => {
                 height={500}
                 alt={`Header image for ${data.title}`}
             />
-            <div className=' flex' >
-                <div className="flex items-center mt-4 ml-4">
+            <div className='m-5'>
+                <span className=" mr-4 dark:text-white text-gray-900">Topics: </span>
+                <span className="inline-block mr-3 py-1 px-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-blue-500  text-sm font-medium tracking-wides cursor-pointer">
+                    {data.Topic}
+                </span>
+
+            </div>
+            <div className='flex' >
+                <div className="flex items-center ml-4">
                     <Image
                         src={data.AuthorImage}
                         alt="Author"
