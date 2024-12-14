@@ -36,7 +36,7 @@ const ArticlesSideBar = ({ allTopics }: ArticlesSideBarProps) => {
     };
 
     return (
-        <aside className=" w-64 border-r bg-gray-50 dark:bg-gray-900 dark:border-gray-700 p-6 hidden md:block">
+        <aside className=" w-64 border-r bg-gray-50 dark:bg-gray-800 dark:border-gray-700 p-6 hidden md:block">
             <div className="sticky top-8">
                 <div className="mb-8">
                     <Link href={'/articles'}>

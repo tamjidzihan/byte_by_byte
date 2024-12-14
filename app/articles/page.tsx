@@ -8,7 +8,7 @@ const ArticlesPage = () => {
     const allTopics = getAllTopics()
 
     return (
-        <div className="flex w-full min-h-screen  bg-gray-50 dark:bg-gray-800  ">
+        <div className="flex w-full min-h-screen  bg-gray-50 dark:bg-gray-900  ">
             <ArticlesSideBar
                 allTopics={allTopics}
             />

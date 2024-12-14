@@ -48,7 +48,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className=" min-h-screen flex flex-col dark:bg-gray-800  bg-white">
+      <body className=" min-h-screen flex flex-col dark:bg-gray-900  bg-white">
 
         <Navbar allTopics={allTopics} />
         <main>{children}</main>
