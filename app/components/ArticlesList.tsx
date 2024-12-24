@@ -40,26 +40,23 @@ const ArticlesList = ({ allBlogs, initialCount, incrementCount }: ArticlesListPr
         const matchesSearch =
             searchQuery === '' ||
             blog.data.Title.toLowerCase().includes(searchQuery.toLowerCase())
-
         // searchQuery === '' ||
         // blog.data.Title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         // blog.data.description.toLowerCase().includes(searchQuery.toLowerCase());
-
         const matchesTopics =
             selectedTopics.length === 0 || selectedTopics.includes(blog.data.Topic);
-
         return blog.data.isPublished && matchesSearch && matchesTopics && isDateInRange(blog.data.createdAt);
     });
-    const visibleBlogs = filteredBlogs.slice(0, visibleCount);
+    const sortedBlog = filteredBlogs.sort((a, b) => new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()) // Sort by createdAt in descending order
+    const visibleBlogs = sortedBlog.slice(0, visibleCount);
 
     const heading = `${selectedTopics || ''}  Blog Posts`
     return (
         <div>
             <h1 className="text-3xl dark:text-white text-gray-700 font-bold mb-8"> {heading}</h1>
-            <div className="grid gap-8 mb-32">
+            <div className="grid gap-8 mb-10">
                 {visibleBlogs
                     .filter(blog => blog.data.isPublished) // Filter only published blogs
-                    .sort((a, b) => new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()) // Sort by createdAt in descending order
                     .map(blog => (
                         <ArticlesCard
                             key={blog.data.Id}
@@ -72,7 +69,7 @@ const ArticlesList = ({ allBlogs, initialCount, incrementCount }: ArticlesListPr
 
 
             {visibleCount < allBlogs.length && (
-                <div className="text-center mt-8">
+                <div className="text-center">
                     <button
                         onClick={handleLoadMore}
                         className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"

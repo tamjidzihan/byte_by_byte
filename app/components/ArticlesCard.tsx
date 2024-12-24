@@ -8,14 +8,16 @@ import Link from 'next/link'
 const ArticlesCard = ({ data, readTime }: any) => {
     const formattedDate = getFormatDate(data.createdAt)
     return (
-        <article className="border  bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 hover:dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-            <Image
-                className="w-full h-48 object-cover"
-                src={data.HeaderImage}
-                width={500}
-                height={500}
-                alt={`Header image for ${data.title}`}
-            />
+        <article className="border mb-8 bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 hover:dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+            <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} >
+                <Image
+                    className="w-full h-48 object-cover hover:scale-105 duration-300"
+                    src={data.HeaderImage}
+                    width={500}
+                    height={500}
+                    alt={`Header image for ${data.title}`}
+                />
+            </Link>
             <div className='m-5'>
                 <span className=" mr-4 dark:text-white text-gray-900">Topics: </span>
                 <span className="inline-block mr-3 py-1 px-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-blue-500  text-sm font-medium tracking-wides cursor-pointer">

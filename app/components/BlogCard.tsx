@@ -12,13 +12,15 @@ function BlogCard({ data, readTime }: any) {
             <article
                 className="h-full max-h-[30rem] bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 hover:dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-shadow max-md: cursor-pointer"
             >
-                <Image
-                    className="w-full h-48 object-cover"
-                    src={data.HeaderImage}
-                    width={500}
-                    height={500}
-                    alt={`Header image for ${data.title}`}
-                />
+                <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} >
+                    <Image
+                        className="w-full h-48 object-cover hover:scale-110 duration-300 ease-in-out"
+                        src={data.HeaderImage}
+                        width={500}
+                        height={500}
+                        alt={`Header image for ${data.title}`}
+                    />
+                </Link>
                 <div className="p-6">
                     <div className=" flex justify-between">
                         <Link href={'/'} >

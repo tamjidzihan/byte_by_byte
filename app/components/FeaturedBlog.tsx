@@ -17,13 +17,15 @@ const FeaturedPost = ({ data, readTime }: FeaturedPostProps) => {
         <section className="relative py-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="relative bg-white dark:bg-gray-950  hover:bg-gray-100 hover:dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl max-md:hover:shadow-xl transition-shadow max-md: cursor-pointer">
-                    <Image
-                        src={data.HeaderImage}
-                        alt={`Header image for ${data.title}`}
-                        className="w-full h-72 object-cover"
-                        width={500}
-                        height={500}
-                    />
+                    <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} >
+                        <Image
+                            src={data.HeaderImage}
+                            alt={`Header image for ${data.title}`}
+                            className="w-full h-72 object-cover"
+                            width={500}
+                            height={500}
+                        />
+                    </Link>
                     <div className="p-8">
                         <span className="text-sm flex justify-between">
                             <Link href={'/'} >
