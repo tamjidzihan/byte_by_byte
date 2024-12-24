@@ -57,16 +57,17 @@ const ArticlesList = ({ allBlogs, initialCount, incrementCount }: ArticlesListPr
         <div>
             <h1 className="text-3xl dark:text-white text-gray-700 font-bold mb-8"> {heading}</h1>
             <div className="grid gap-8 mb-32">
-                {visibleBlogs.map(
-                    (blog) =>
-                        blog.data.isPublished && (
-                            <ArticlesCard
-                                key={blog.data.Id}
-                                data={blog.data}
-                                readTime={blog.readTime.text}
-                            />
-                        )
-                )}
+                {visibleBlogs
+                    .filter(blog => blog.data.isPublished) // Filter only published blogs
+                    .sort((a, b) => new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()) // Sort by createdAt in descending order
+                    .map(blog => (
+                        <ArticlesCard
+                            key={blog.data.Id}
+                            data={blog.data}
+                            readTime={blog.readTime.text}
+                        />
+                    ))}
+
             </div>
 
 
