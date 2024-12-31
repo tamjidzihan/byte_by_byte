@@ -72,7 +72,7 @@ const ArticlesList = ({ allBlogs, initialCount, incrementCount }: ArticlesListPr
                 <div className="text-center">
                     <button
                         onClick={handleLoadMore}
-                        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                        className="px-4 py-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-gray-300  text-md font-medium "
                     >
                         Load More...
                     </button>

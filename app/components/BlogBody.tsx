@@ -30,7 +30,7 @@ const BlogBody = ({ data, mdxSource }: BlogBodyProps) => {
                         <span className=" mr-4 dark:text-white text-gray-900">Tags: </span>
                         {data.tags.map((tag, index) =>
                             <span key={index} className="inline-block mr-3 py-1 px-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-blue-500  text-sm font-medium tracking-wides cursor-pointer">
-                                {tag}
+                                #{tag.toLowerCase().trim()}
                             </span>
                         )}
                     </div>
@@ -48,7 +48,7 @@ const BlogBody = ({ data, mdxSource }: BlogBodyProps) => {
                         </div>
                     </div>
                     <hr className="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
-                    <div className="prose max-w-xs sm:max-w-sm md:max-w-prose lg:prose-xl  dark:prose-dark">
+                    <div className="prose dark:prose-dark">
                         <MDXRemote {...mdxSource} />
                     </div>
                 </article>

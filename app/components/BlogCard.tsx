@@ -14,7 +14,7 @@ function BlogCard({ data, readTime }: any) {
             >
                 <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} >
                     <Image
-                        className="w-full h-48 object-cover hover:scale-110 duration-300 ease-in-out"
+                        className="w-full h-56 object-cover hover:scale-110 duration-300 ease-in-out"
                         src={data.HeaderImage}
                         width={500}
                         height={500}
