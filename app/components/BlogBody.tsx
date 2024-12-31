@@ -23,7 +23,7 @@ const BlogBody = ({ data, mdxSource }: BlogBodyProps) => {
                         height={500}
                         width={500}
                     />
-                    <h1 className="text-4xl font-bold mb-3 dark:prose-dark">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 dark:prose-dark">
                         {data.Title}
                     </h1>
                     <div>
@@ -48,7 +48,7 @@ const BlogBody = ({ data, mdxSource }: BlogBodyProps) => {
                         </div>
                     </div>
                     <hr className="h-px my-6 bg-gray-200 border-0 dark:bg-gray-700" />
-                    <div className="prose dark:prose-dark">
+                    <div className="prose max-w-xl sm:max-w-xl md:max-w-prose lg:prose-xl  dark:prose-dark">
                         <MDXRemote {...mdxSource} />
                     </div>
                 </article>
