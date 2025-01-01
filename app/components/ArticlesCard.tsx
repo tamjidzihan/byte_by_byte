@@ -8,7 +8,7 @@ import Link from 'next/link'
 const ArticlesCard = ({ data, readTime }: any) => {
     const formattedDate = getFormatDate(data.createdAt)
     return (
-        <article className="border mb-8 bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 hover:dark:bg-gray-800 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+        <article className=" cursor-pointer mb-8 border dark:border-gray-900 bg-gray-50 dark:bg-gray-950  hover:dark:border-gray-400 hover:border-gray-300 rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
             <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} >
                 <Image
                     className="w-full h-48 object-cover hover:scale-105 duration-300"

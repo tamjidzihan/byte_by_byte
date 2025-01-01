@@ -10,16 +10,18 @@ function BlogCard({ data, readTime }: any) {
     return (
         <>
             <article
-                className="h-full max-h-[30rem] bg-gray-50 dark:bg-gray-950 hover:bg-gray-100 hover:dark:bg-gray-800 rounded-lg shadow-sm overflow-hidden hover:shadow-xl transition-shadow max-md: cursor-pointer"
+                className="h-full max-h-[30rem] bg-gray-50 dark:bg-gray-950 hover:bg-gray-100  rounded-lg border dark:border-gray-900 hover:dark:border-gray-400 hover:border-gray-300  shadow-sm overflow-hidden hover:shadow-xl transition-shadow max-md: cursor-pointer"
             >
                 <Link href={`/blogs/${String(data.Title.split(" ").join("-").toLowerCase())}`} >
-                    <Image
-                        className="w-full h-56 object-cover hover:scale-110 duration-300 ease-in-out"
-                        src={data.HeaderImage}
-                        width={500}
-                        height={500}
-                        alt={`Header image for ${data.title}`}
-                    />
+                    <div className=" overflow-hidden">
+                        <Image
+                            className="w-full h-56 object-cover hover:scale-110 duration-300 ease-in-out"
+                            src={data.HeaderImage}
+                            width={500}
+                            height={500}
+                            alt={`Header image for ${data.title}`}
+                        />
+                    </div>
                 </Link>
                 <div className="p-6">
                     <div className=" flex justify-between">
