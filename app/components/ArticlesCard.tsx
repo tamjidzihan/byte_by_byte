@@ -13,8 +13,8 @@ const ArticlesCard = ({ data, readTime }: any) => {
                 <Image
                     className="w-full h-48 object-cover hover:scale-105 duration-300"
                     src={data.HeaderImage}
-                    width={500}
-                    height={500}
+                    width={1440}
+                    height={1440}
                     alt={`Header image for ${data.title}`}
                 />
             </Link>

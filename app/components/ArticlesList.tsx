@@ -50,10 +50,10 @@ const ArticlesList = ({ allBlogs, initialCount, incrementCount }: ArticlesListPr
     const sortedBlog = filteredBlogs.sort((a, b) => new Date(b.data.createdAt).getTime() - new Date(a.data.createdAt).getTime()) // Sort by createdAt in descending order
     const visibleBlogs = sortedBlog.slice(0, visibleCount);
 
-    const heading = `${selectedTopics || ''}  Blog Posts`
+    const heading = `${selectedTopics || ''}  Blogs`
     return (
         <div>
-            <h1 className="text-3xl dark:text-white text-gray-700 font-bold mb-8"> {heading}</h1>
+            <h1 className="text-3xl dark:text-white text-gray-700 font-bold mb-8">{heading}</h1>
             <div className="grid gap-8 mb-10">
                 {visibleBlogs
                     .filter(blog => blog.data.isPublished) // Filter only published blogs

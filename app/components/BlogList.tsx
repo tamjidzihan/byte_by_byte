@@ -35,7 +35,7 @@ const BlogList: React.FC<BlogListProps> = ({ allBlogs, initialCount, incrementCo
                 <div className="text-center mt-8">
                     <button
                         onClick={handleLoadMore}
-                        className="px-4 py-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-gray-300  text-sm font-medium "
+                        className="px-4 py-2 rounded bg-gray-200 dark:bg-indigo-900 hover:text-blue-500 text-indigo-700 dark:text-gray-200 hover:dark:text-gray-300 text-sm font-medium "
                     >
                         Load More...
                     </button>

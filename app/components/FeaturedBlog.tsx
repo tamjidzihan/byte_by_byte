@@ -22,8 +22,8 @@ const FeaturedPost = ({ data, readTime }: FeaturedPostProps) => {
                             src={data.HeaderImage}
                             alt={`Header image for ${data.title}`}
                             className="w-full h-96 object-cover"
-                            width={500}
-                            height={500}
+                            width={1440}
+                            height={1440}
                         />
                     </Link>
                     <div className="p-8">
